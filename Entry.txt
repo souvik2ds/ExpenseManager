@@ -1,0 +1,3 @@
+500.0|BILLS|I have paid my internet bills|2025-11-06
+1000.0|BILLS|Paid electric bill|2025-10-10
+100.0|FOOD|coffee |2025-11-01
