@@ -1,3 +1,4 @@
+![Expense Manager Banner](banner.png)
 # 💰 Expense Manager (Java Console Project)
 
 A simple **Expense Management System** built in Java that runs in the console.  
