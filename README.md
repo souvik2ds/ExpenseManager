@@ -1,60 +1,160 @@
-![Expense Manager Banner](banner.png)
-# 💰 Expense Manager (Java Console Project)
+🌟 Expense Manager (Java • Console App)
 
-A simple **Expense Management System** built in Java that runs in the console.  
-It allows users to **add, view, filter, and calculate expenses** while persisting data using **file handling (Java I/O Streams)**.
+A clean, modular, file-based expense tracking system built using
+Java, OOP, Exception Handling, Validation Layer, Helper Layer, and Git Versioning.
 
----
+📌 Overview
 
-## 🚀 Features
-- ➕ Add new expenses with amount, description, category, and date  
-- 📂 Persistent data storage using File I/O  
-- 📊 View all expenses in a formatted console table  
-- 🔍 Filter expenses by category or month  
-- 💵 Calculate total and category-wise expenses  
-- ⚙️ Extendable for future enhancements  
+This is a fully refactored, production-style Expense Manager project
+designed with a multi-layer architecture and strong emphasis on:
 
----
+✔ Input Validation
+✔ Custom Exceptions
+✔ Clean User Input Handling
+✔ File I/O Operations
+✔ Monthly & Category-wise Reports
+✔ Professional Package Structure
 
-## 🧠 Learning Outcomes
-This project helped me strengthen my understanding of:
-- Object-Oriented Programming (OOP) concepts  
-- Java File Handling (Streams, Readers, Writers)  
-- Data organization using Collections (ArrayList, Map)  
-- Console-based program design and user interaction  
+🚀 Features
 
----
+➕ Add new expense (amount + category + description + date)
 
-## 🛠️ Tech Stack
-- **Language:** Java  
-- **Concepts Used:** OOP, File I/O Streams, Exception Handling, Collections  
-- **IDE:** Eclipse  
+📄 View all expenses
 
----
+🗂 Category-wise expense filter
 
-## 📂 Project Structure
-ExpenseManager/
-├── src/
-│ ├── Expense.java
-│ ├── ExpenseManager.java
-│ ├── Category.java
-│ ├── main.java
-├── Entry.txt # Stores expense records
-├── README.md
+📆 Monthly expense summary
 
----
+💰 Total expense calculation
 
-## ⚙️ Future Enhancements
-- [ ] Add user authentication  
-- [ ] Export data to CSV/JSON  
-- [ ] Integrate MySQL for database persistence  
-- [ ] Build REST APIs using Spring Boot  
----
-## 🧩 Author
-👨‍💻 **Souvik Das**  
-💼 Java Backend Developer | Spring Boot | MySQL | Problem Solving  
-📫 *“Code. Build. Improve. Repeat.”*
+🔒 Input validation (range, format, datatype)
 
----
+⚠ Custom exception handling (InvalidAmountException, InvalidCategoryException, etc.)
 
-⭐ *If you like this project, consider giving it a star on GitHub!*
+📁 Persistent file storage using Entry.txt
+
+🔧 Clean separation of logic using packages
+
+🧱 Project Architecture
+src/
+ ├── main/                  --> main() entry point
+ ├── model/                 --> Expense, Category
+ ├── service/               --> ExpenseManager (core business logic)
+ ├── helper/                --> Helper (safe input handling)
+ ├── validator/             --> Validator (business rule validation)
+ ├── exceptions/            --> Custom exceptions + central ExceptionHandler
+
+🖼 Architecture Flow Diagram
+User Input 
+   ↓
+Helper (safe input reader)
+   ↓
+Validator (business rule checks)
+   ↓
+ExceptionHandler (prints clean error messages)
+   ↓
+ExpenseManager (application logic)
+   ↓
+File I/O (saving & loading)
+
+
+This makes the app clean, maintainable, and scalable.
+
+🧩 Exception Handling
+
+The project uses a full exception strategy:
+
+Runtime exceptions for invalid data
+
+Checked exceptions for file operations
+
+Custom exceptions:
+
+InvalidAmountException
+
+InvalidCategoryException
+
+InvalidDateException
+
+Central handler:
+ExceptionHandler.handle(e) to show clean error messages
+
+🛡 Validation Layer (Key Rules)
+
+Validator ensures:
+
+Amount must be positive
+
+Category index must be valid
+
+Date must follow YYYY-MM-DD format
+
+Year must be ≥ 1900
+
+Month must be between 1–12
+
+Helper ensures:
+
+Safe parsing of integers
+
+Safe reading of Strings
+
+Safe date input
+
+Together they provide a robust input pipeline.
+
+📁 File Format (Entry.txt)
+
+Each line stores one expense:
+
+amount|CATEGORY|description|2024-01-15
+
+
+This enables easy saving/loading using simple parsing.
+
+▶️ How to Run
+
+Clone the repository:
+
+git clone https://github.com/<your-username>/<repo-name>.git
+
+
+Open the project in Eclipse/IntelliJ/VS Code
+
+Run the main class
+
+🛠 Tech Stack
+
+Java 8+
+
+File I/O Streams
+
+Custom Exceptions
+
+OOP Principles
+
+Git & GitHub Version Control
+
+🔮 Future Enhancements
+
+ User authentication
+
+ Export expenses to CSV/JSON
+
+ Migrate to MySQL database
+
+ Build REST APIs using Spring Boot
+
+ Add sorting & searching filters
+
+ Add expense editing & deletion
+
+👨‍💻 Author
+
+Souvik Das
+Java Backend Developer | Spring Boot | DSA | MySQL
+“Code. Learn. Build. Improve.”
+
+⭐ Support
+
+If this project helped you, please ⭐ star the repo — it motivates me to build more!
